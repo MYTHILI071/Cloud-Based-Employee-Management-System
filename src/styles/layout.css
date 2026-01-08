@@ -37,3 +37,15 @@ html, body {
   box-sizing: border-box;
 }
 
+/* GLOBAL PAGE FIX */
+.page-content {
+  padding-top: 90px;  /* space for navbar */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* REMOVE CENTERING */
+.dashboard,
+.app-container {
+  display: block !important;
+}

@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 const ManagerDashboard = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+    <NavBar title="Manager Dashboard" />
     <div className="dashboard page">
       <h1 className="page-title manager-title">Manager Dashboard</h1>
 
@@ -30,6 +33,7 @@ const ManagerDashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

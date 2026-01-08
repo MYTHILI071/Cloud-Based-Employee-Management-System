@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NavBar from "../../components/NavBar";
 import API from "../../api/api";
 import {
   BarChart,
@@ -32,10 +33,12 @@ const HrAnalytics = () => {
   };
 
 return (
-  <div className="card" style={{ width: "520px" }}>
+  <>
+  <NavBar title="Analytics" />
+  <div className="card" style={{ width: "520px", marginTop:"20px" }}>
     <h2 style={{ marginBottom: "20px" }}>HR Analytics Dashboard</h2>
 
-    <div  style={{width: "100%",height: "350px", marginTop: "20px"}}>
+    <div  style={{width: "100%",height: "350px", marginTop: "30px"}}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -47,6 +50,7 @@ return (
       </ResponsiveContainer>
     </div>
   </div>
+  </>
 );
 
 };

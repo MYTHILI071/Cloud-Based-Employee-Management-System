@@ -1,5 +1,6 @@
 import { useState } from "react";
 import API from "../../api/api";
+import NavBar from "../../components/NavBar";
 
 const ManagerReviews = () => {
   const [employeeId, setEmployeeId] = useState("");
@@ -27,10 +28,32 @@ const ManagerReviews = () => {
   };
 
   return (
-    <div className="dashboard">
-      <h1>Submit Employee Review</h1>
+    <>
+    <NavBar title="Review" />
+  <div
+    className="dashboard"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "900px",
+        textAlign: "center"
+      }}
+    >
+      <h1 className="page-title">Submit Employee Review</h1>
 
-      <form className="card review-form" onSubmit={submitReview}>
+      <form
+        className="card review-form"
+        onSubmit={submitReview}
+        style={{
+          margin: "0 auto"
+        }}
+      >
         <div className="grid-2">
           <input
             className="input"
@@ -63,7 +86,7 @@ const ManagerReviews = () => {
           onChange={(e) => setComments(e.target.value)}
         />
 
-        <div className="form-actions">
+        <div className="form-actions" style={{ justifyContent: "center" }}>
           <button className="btn btn-small" type="submit">
             Submit Review
           </button>
@@ -72,7 +95,10 @@ const ManagerReviews = () => {
         {success && <p className="success-text">{success}</p>}
       </form>
     </div>
-  );
+  </div>
+  </>
+);
+
 };
 
 export default ManagerReviews;

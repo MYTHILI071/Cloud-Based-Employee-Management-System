@@ -1,5 +1,6 @@
 import { useState } from "react";
 import API from "../../api/api";
+import NavBar from "../../components/NavBar";
 
 export default function ManagerFeedback() {
   const [employeeId, setEmployeeId] = useState("");
@@ -21,10 +22,31 @@ export default function ManagerFeedback() {
   };
 
   return (
-    <div className="page">
+    <>
+    <NavBar title="Feedback" />
+  <div
+    className="page"
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+  >
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "800px",
+        textAlign: "center"
+      }}
+    >
       <h2 className="page-title">Give Feedback</h2>
 
-      <div className="card">
+      <div
+        className="card"
+        style={{
+          margin: "0 auto"
+        }}
+      >
         <input
           className="input"
           placeholder="Employee ID"
@@ -47,5 +69,8 @@ export default function ManagerFeedback() {
         {status && <p style={{ marginTop: 12 }}>{status}</p>}
       </div>
     </div>
-  );
+  </div>
+  </>
+);
+
 }

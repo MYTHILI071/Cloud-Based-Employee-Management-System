@@ -49,11 +49,37 @@ export default function DailyWork() {
     loadLogs();
   }, []);
 
-  return (
-    <div className="page">
-      <h2 className="page-title">Daily Work Update</h2>
+ return (
+  <div
+    className="page"
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      paddingTop: "10px"
+    }}
+  >
+    <h2 className="page-title" style={{ marginBottom: "24px" }}>
+      Daily Work Update
+    </h2>
 
-      <div className="card grid-2">
+    {/* Daily Work Form */}
+    <div
+      className="card"
+      style={{
+        width: "100%",
+        maxWidth: "900px",
+        marginBottom: "32px"
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "16px",
+          marginBottom: "16px"
+        }}
+      >
         <input
           type="date"
           className="input"
@@ -67,27 +93,42 @@ export default function DailyWork() {
           value={work.hours}
           onChange={e => setWork({ ...work, hours: e.target.value })}
         />
-
-        <textarea
-          className="textarea"
-          placeholder="Work description"
-          value={work.description}
-          onChange={e => setWork({ ...work, description: e.target.value })}
-        />
-
-        <button className="btn" onClick={submit}>Submit</button>
       </div>
 
-      <div className="card">
-        <h3>My Work Logs</h3>
-        {logs.length === 0 && <p>No work logs found</p>}
+      <textarea
+        className="textarea"
+        placeholder="Work description"
+        value={work.description}
+        onChange={e => setWork({ ...work, description: e.target.value })}
+        style={{ marginBottom: "16px" }}
+      />
 
-        {logs.map(l => (
-          <p key={l.workId}>
-            📅 {l.workDate} – {l.description} ({l.hoursWorked} hrs)
-          </p>
-        ))}
+      <div style={{ textAlign: "right" }}>
+        <button className="btn" onClick={submit}>
+          Submit
+        </button>
       </div>
     </div>
-  );
+
+    {/* Work Logs */}
+    <div
+      className="card"
+      style={{
+        width: "100%",
+        maxWidth: "900px"
+      }}
+    >
+      <h3>My Work Logs</h3>
+
+      {logs.length === 0 && <p>No work logs found</p>}
+
+      {logs.map(l => (
+        <p key={l.workId}>
+          📅 {l.workDate} – {l.description} ({l.hoursWorked} hrs)
+        </p>
+      ))}
+    </div>
+  </div>
+);
+
 }

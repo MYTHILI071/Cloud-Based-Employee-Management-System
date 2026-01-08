@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 const HRDashboard = () => {
   return (
+    <>
+    <NavBar title="HR Dashboard" />
     <div className="dashboard page">
       <h1 className="page-title">HR Dashboard</h1>
 
@@ -31,6 +34,7 @@ const HRDashboard = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
