@@ -1,0 +1,39 @@
+:root {
+  --primary: #4f46e5;
+  --secondary: #6366f1;
+  --accent: #22c55e;
+
+  --bg-dark: rgba(0, 0, 0, 0.55);
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
+/* Main page wrapper */
+.page-container {
+  height: 100vh; /* adjust if header exists */
+  padding: 32px;
+  box-sizing: border-box;
+}
+

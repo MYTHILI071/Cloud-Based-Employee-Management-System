@@ -1,0 +1,56 @@
+/* ===============================
+   GLOBAL APP BACKGROUND
+================================ */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.app-container {
+  height: 100vh;   /* NOT min-height */
+  overflow-y: hidden;
+
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../assets/image12.jpg");
+
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 🔥 IMPORTANT CHANGE */
+  padding: 40px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95); 
+  border-radius: 16px;
+  padding: 24px;
+  color: #1f2937;                        
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.card h3 {
+  color: #111827;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #374151;
+}

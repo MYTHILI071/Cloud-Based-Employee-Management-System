@@ -1,0 +1,269 @@
+/* ===============================
+   GLOBAL CARD (ONE SOURCE ONLY)
+================================ */
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  margin-bottom: 28px;
+}
+
+/* ===============================
+   GRID SYSTEM
+================================ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ===============================
+   INPUTS & TEXTAREA (UNIFIED)
+================================ */
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #4f46e5;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* ===============================
+   PAGE & TITLES
+================================ */
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   LOGIN PAGE
+================================ */
+
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 420px;
+  padding: 40px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 28px;
+  color: #111827;
+}
+
+.login-card .btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ===============================
+   HR DASHBOARD
+================================ */
+
+.hr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.hr-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.hr-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.35);
+}
+
+.hr-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.hr-card p {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+/* ===== HR / APPRAISAL FORM WIDTH FIX ===== */
+.page .card {
+  max-width: 720px;   /* increase width */
+  width: 100%;
+}
+
+
+/* ===============================
+   MANAGER DASHBOARD
+================================ */
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.manager-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+}
+
+.manager-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.manager-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.manager-card p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 22px;
+}
+
+/* ===============================
+   TABLES
+================================ */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.data-table th {
+  background: var(--primary);
+  color: white;
+  padding: 16px;
+  font-size: 15px;
+}
+
+.data-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table tr:hover {
+  background: #eef2ff;
+}
+
+/* ===============================
+   DAILY WORK PAGE
+================================ */
+
+.card.grid-2 {
+  max-width: 800px;
+  margin: 0 auto 35px;
+}
+
+.card.grid-2 .textarea,
+.card.grid-2 .btn {
+  grid-column: span 2;
+}
+
+.card.grid-2 .btn {
+  justify-self: flex-end;
+}
+
+/* ===============================
+   FEEDBACK / STATUS
+================================ */
+
+.error-text {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.success-text {
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 12px;
+}
