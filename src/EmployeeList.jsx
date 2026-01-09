@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import API from "./api/api";
 
 function EmployeeList() {
 
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/employees")
-      .then(response => response.json())
-      .then(data => setEmployees(data))
+    API.get("/employees")
+      .then(response => setEmployees(response.data))
       .catch(error => console.error(error));
   }, []);
 

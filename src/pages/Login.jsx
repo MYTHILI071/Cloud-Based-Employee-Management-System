@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API from "../api/api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,23 +9,12 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+      const res = await API.post("/auth/login", {
+        email,
+        password,
       });
 
-      if (!res.ok) {
-        alert("Invalid credentials");
-        return;
-      }
-
-      const data = await res.json();
+      const data = res.data;
 
       // SAVE LOGIN SESSION
       localStorage.setItem("user", JSON.stringify(data));
@@ -38,7 +28,11 @@ const Login = () => {
       else navigate("/employee");
 
     } catch (err) {
-      alert("Server error");
+      if (err.response && err.response.status === 401) {
+        alert("Invalid credentials");
+      } else {
+        alert("Server error");
+      }
     }
   };
 

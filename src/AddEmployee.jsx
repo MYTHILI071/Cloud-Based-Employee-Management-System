@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API from "./api/api";
 
 function AddEmployee() {
 
@@ -16,18 +17,11 @@ function AddEmployee() {
   };
 
   const saveEmployee = () => {
-    fetch("http://localhost:8080/api/employees", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(employee)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log("Saved:", data);
-      alert("Employee Added");
-    });
+    API.post("/employees", employee)
+      .then(res => {
+        console.log("Saved:", res.data);
+        alert("Employee Added");
+      });
   };
 
   return (
